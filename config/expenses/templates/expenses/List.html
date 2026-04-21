@@ -1,0 +1,32 @@
+<h1>All Expenses</h1>
+<a href="/add/">Add Expense</a>
+
+<table border="1">
+    <tr>
+        <th>Description</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Category</th>
+        <th>Action</th>
+    </tr>
+
+    {% for expense in expenses %}
+    <tr>
+        <td>{{ expense.description }}</td>
+        <td>{{ expense.amount }}</td>
+        <td>{{ expense.date }}</td>
+        <td>{{ expense.category }}</td>
+        <td>
+            <a href="/delete/{{ expense.id }}/">Delete</a>
+        </td>
+        <td>
+            <a href="/edit/{{ expense.id }}/">Edit</a>
+        </td>
+    </tr>
+
+</td>
+<button id="summaryBtn">Generate Summary</button>
+<div id="summaryResult"></div>
+
+    {% endfor %}
+</table>

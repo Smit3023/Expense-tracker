@@ -1,0 +1,12 @@
+<h2>Edit Expense</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="text" name="description" value="{{ expense.description }}"><br><br>
+    <input type="number" name="amount" value="{{ expense.amount }}"><br><br>
+    <input type="date" name="date" value="{{ expense.date }}"><br><br>
+    <input type="text" name="category" value="{{ expense.category }}"><br><br>
+
+    <button type="submit">Update</button>
+</form>
